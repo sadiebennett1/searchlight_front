@@ -4,6 +4,7 @@ import SearchForm from './SearchForm'
 import { connect } from 'react-redux'
 
 
+
 class Home extends Component {
 
   componentDidMount(){
@@ -15,8 +16,8 @@ class Home extends Component {
   render(){
     return(
       <div>
-      <h1>Home Page</h1>
-      <SearchForm />
+        <h1>Home Page</h1>
+        <SearchForm />
       </div>
     )
   }

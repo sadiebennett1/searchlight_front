@@ -3,7 +3,9 @@
 
 const initialState = {
   celebrities: {},
-  users: {},
+  currentUser: localStorage.getItem('user'),
+  userId: localStorage.getItem('userId'),
+  loggedIn: false,
   tweets: {}
 }
 
@@ -13,7 +15,11 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_TWEETS':
-      return {...state, tweets: action.payload}
+      return {...state, tweets: action.payload};
+    case 'ON_LOGIN':
+      return {...state, loggedIn: true, currentUser: action.user, userId: action.user.id}
+    case 'ERROR':
+      return {};
     default:
       return state
   }
