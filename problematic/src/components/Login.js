@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { onLogin} from '../Redux/Actions/authActions.js'
 
-export default class LoginForm extends React.Component {
+class Login extends React.Component {
 
   state = {
     username: "",
@@ -12,11 +12,12 @@ export default class LoginForm extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({[e.target.placeholder]: e.target.value})
+    this.setState({[e.target.name]: e.target.value})
   }
 
   handleLogin = event => {
     event.preventDefault()
+    console.log("I am state here", this.state)
     this.props.onLogin(this.state)
     this.resetState()
   }
@@ -78,41 +79,36 @@ export default class LoginForm extends React.Component {
 
   render(){
     return(
-      <>
-      {(localStorage.token) ?
-      <>
-      </>
-      :
-      <>
-      {this.state.signUp
-        ?
-        <form onSubmit={this.handleSignUp}>
-          <input type='text' placeholder="username" value={this.state.username} onChange={this.handleChange}></input>
-          <input type='password' placeholder="password" value={this.state.password} onChange={this.handleChange}></input>
-          <input type='submit' value='Sign Up'></input>
-        </form>
-        :
-        <form onSubmit={this.handleLogin}>
-          <input type='text' placeholder="username" value={this.state.username} onChange={this.handleChange}></input>
-          <input type='password' placeholder="password" value={this.state.password} onChange={this.handleChange}></input>
-          <input type='submit' value='Log In'></input>
-        </form>
-      }
-          <button onClick={this.handleClick}>
-            {this.state.signUp ? 'Log In' : 'Sign Up'}
-          </button>
-          </>
-      }
-      <h3>{localStorage.getItem('user')}</h3>
-      </>
+      <div>
+          <form onSubmit={(event) => {this.handleLogin(event)}}>
+          Username:<br/>
+          <input onChange={this.handleChange} type="textfield" name="username" value={this.state.username}></input>
+          <br/>
+          Password:<br/>
+          <input onChange={this.handleChange} type="textfield" name="password" value={this.state.password}></input>
+          <br></br>
+          <input type="submit" value="Submit"></input>
+          </form>
+      </div>
     )
   }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
+
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: state.loggedIn,
+    tweets: state.tweets,
+    currentUser: state.currentUser
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLogin: () => dispatch(onLogin())
+    onLogin: (userInfo) => dispatch(onLogin(userInfo))
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -4,6 +4,8 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav'
 import Login from './components/Login'
+import Error from './components/Error'
+import CelebrityProfile from './components/CelebrityProfile'
 
 
 //components
@@ -18,6 +20,8 @@ class App extends Component {
                 <Route path="/" component={Nav} />
                 <Route path="/home" component={Home} />
                 <Route path="/login" component={Login} />
+                <Route path="/celebrities/:id" component={CelebrityProfile}/>
+                <Route path="/404" component={Error} />
           </BrowserRouter>
         </header>
       </div>
