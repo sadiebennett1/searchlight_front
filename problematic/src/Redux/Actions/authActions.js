@@ -4,7 +4,6 @@ export const errorLogin = (error) => ({type:'ERROR', payload: error})
 
 export const onLogin = (state) => {
   return(dispatch) => {
-    console.log("I am state nowe", state)
     return fetch("http://localhost:3005/api/v1/login", {
             method: "POST",
             headers: {

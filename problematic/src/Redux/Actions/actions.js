@@ -4,6 +4,10 @@ export const allTweets = (tweets) => ({type: 'GET_TWEETS', payload: tweets})
 
 export const allCelebrities = (celebrities) => ({type:'GET_CELEBRITIES', payload: celebrities})
 
+export const filterCelebrities = (celebrities) => ({
+  type: 'FILTER_CELEBS', payload: celebrities
+})
+
 
 //Thunk Creators
 

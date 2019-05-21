@@ -3,10 +3,11 @@
 
 const initialState = {
   celebrities: [],
+  filteredCelebs: [],
   currentUser: localStorage.getItem('user'),
   userId: localStorage.getItem('userId'),
   loggedIn: false,
-  tweets: {}
+  tweets: []
 }
 
 
@@ -17,9 +18,11 @@ const reducer = (state = initialState, action) => {
     case 'GET_TWEETS':
       return {...state, tweets: action.payload};
     case 'GET_CELEBRITIES':
-      return  {...state, celebrities: action.payload};
+      return  {...state, celebrities: action.payload, filteredCelebs: action.payload};
     case 'ON_LOGIN':
-      return {...state, loggedIn: true, currentUser: action.payload.user, userId: action.payload.user.id}
+      return {...state, loggedIn: true, currentUser: action.payload.user, userId: action.payload.user.id};
+    case 'FILTER_CELEBS':
+      return {...state, filteredCelebs: action.payload}
     case 'ERROR':
       return {};
     default:

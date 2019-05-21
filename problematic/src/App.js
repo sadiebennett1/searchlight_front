@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Login from './components/Login'
 import Error from './components/Error'
 import CelebrityProfile from './components/CelebrityProfile'
+import About from './components/About'
 
 
 //components
@@ -19,6 +20,7 @@ class App extends Component {
           <BrowserRouter>
                 <Route path="/" component={Nav} />
                 <Route path="/home" component={Home} />
+                <Route path="/about" component={About} />
                 <Route path="/login" component={Login} />
                 <Route path="/celebrities/:id" component={CelebrityProfile}/>
                 <Route path="/404" component={Error} />

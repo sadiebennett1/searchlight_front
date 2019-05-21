@@ -33,7 +33,7 @@ const mapStateToProps = (state) => {
   return {
     loggedIn: state.loggedIn,
     tweets: state.tweets,
-    celebrities: state.celebrities
+    celebrities: state.filteredCelebs,
   }
 }
 
