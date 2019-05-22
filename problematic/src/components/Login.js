@@ -17,7 +17,6 @@ class Login extends React.Component {
 
   handleLogin = event => {
     event.preventDefault()
-    console.log("I am state here", this.state)
     this.props.onLogin(this.state)
     this.resetState()
   }
@@ -30,52 +29,52 @@ class Login extends React.Component {
     })
   }
 
-  handleLogout = () => {
-  localStorage.removeItem('token')
-  localStorage.removeItem('user')
-  this.setState({
-    currentUser: localStorage.getItem('user'),
-    userId: localStorage.getItem('userId'),
-    error: ''
-  })
-}
-
-  handleClick = () => this.setState({signUp: !this.state.signUp})
-
-  handleSignUp = (e) => {
-    e.preventDefault()
-    console.log('signed up')
-    fetch("http://localhost:3005/api/v1/users", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`},
-      body: JSON.stringify({
-        user: this.state
-      })
-    })
-    .then(r => r.json())
-    .then(userJSON => {
-      console.log('Login response: ', userJSON)
-      if (userJSON.jwt) {
-        localStorage.setItem('token', userJSON.jwt)
-        localStorage.setItem('user', userJSON.user.username)
-        localStorage.setItem('userId', userJSON.user.id)
-        localStorage.setItem('conversations', userJSON.user.conversations_objs)
-        console.log(userJSON.user.conversations_objs)
-        this.setState({
-          currentUser: userJSON.user.username,
-          error: '',
-          conversations: userJSON.user.conversations_objs
-        })
-        this.props.fetchConversations()
-      }else{
-        this.props.setStateFromChild({error: userJSON.error})
-      }
-    })
-    this.resetState()
-  }
+//   handleLogout = () => {
+//   localStorage.removeItem('token')
+//   localStorage.removeItem('user')
+//   this.setState({
+//     currentUser: localStorage.getItem('user'),
+//     userId: localStorage.getItem('userId'),
+//     error: ''
+//   })
+// }
+//
+//   handleClick = () => this.setState({signUp: !this.state.signUp})
+//
+//   handleSignUp = (e) => {
+//     e.preventDefault()
+//     console.log('signed up')
+//     fetch("http://localhost:3005/api/v1/users", {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         Accept: 'application/json',
+//         'Authorization': `Bearer ${localStorage.getItem('token')}`},
+//       body: JSON.stringify({
+//         user: this.state
+//       })
+//     })
+//     .then(r => r.json())
+//     .then(userJSON => {
+//       console.log('Login response: ', userJSON)
+//       if (userJSON.jwt) {
+//         localStorage.setItem('token', userJSON.jwt)
+//         localStorage.setItem('user', userJSON.user.username)
+//         localStorage.setItem('userId', userJSON.user.id)
+//         localStorage.setItem('conversations', userJSON.user.conversations_objs)
+//         console.log(userJSON.user.conversations_objs)
+//         this.setState({
+//           currentUser: userJSON.user.username,
+//           error: '',
+//           conversations: userJSON.user.conversations_objs
+//         })
+//         this.props.fetchConversations()
+//       }else{
+//         this.props.setStateFromChild({error: userJSON.error})
+//       }
+//     })
+//     this.resetState()
+//   }
 
   render(){
     return(

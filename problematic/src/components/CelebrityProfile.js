@@ -10,22 +10,14 @@ class CelebrityProfile extends Component {
 
   componentDidMount() {
     let celebId = parseInt(this.props.match.params.id)
-    let currentcelebrity = {}
-    let currentTweets = []
-    this.props.celebrities.forEach(celebrity =>{
-        if(celebrity.id === celebId){
-            currentcelebrity = celebrity
-        }})
-    this.props.tweets.forEach(tweet => {
-      if(tweet.celebrity_id === celebId){
-          currentTweets.push(tweet)
-      }
-    })
-    console.log(currentTweets)
+    fetch(`http://localhost:3005/celebrities/${celebId}`)
+    .then(r => r.json())
+    .then(res =>
       this.setState({
-          celebrity: currentcelebrity,
-          celebTweets: currentTweets
-        })
+          celebrity: res,
+          celebTweets: res.tweets
+        }))
+
     }
     //
     // componentDidMount(){
@@ -33,10 +25,10 @@ class CelebrityProfile extends Component {
     // }
 
     render(){
-      console.log(this.props)
+      console.log(this.state.celebTweets)
       return(
         <div>
-        <img className="celebImage" src={this.state.celebrity.img} alt=""/>        <h1>{this.state.celebrity.name}</h1>
+        <img className="celebImage" src={this.state.celebrity.img} alt=""/> <h1>{this.state.celebrity.name}</h1>
         {this.state.celebTweets.map(tweet =>
           <div class="container">
             <div class="quote-box">

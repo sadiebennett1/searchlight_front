@@ -4,8 +4,8 @@
 const initialState = {
   celebrities: [],
   filteredCelebs: [],
-  currentUser: localStorage.getItem('user'),
-  userId: localStorage.getItem('userId'),
+  currentUser: {},
+  userId: {},
   loggedIn: false,
   tweets: []
 }

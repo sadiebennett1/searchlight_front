@@ -16,16 +16,26 @@ export const onLogin = (state) => {
       })
       .then(r => r.json())
       .then(userJSON => {
-         console.log('Login response: ', userJSON)
-        if (userJSON.jwt){
+         console.log('Login response: ', userJSON.exception)
+        if (userJSON.jwt && userJSON.user){
           localStorage.setItem('token', userJSON.jwt)
-          localStorage.setItem('user', userJSON.user.username)
-          localStorage.setItem('userId', userJSON.user.id)
           dispatch(successLogin(userJSON))
         } else{
-          let error = userJSON.error
-          dispatch(errorLogin(error.toString()))
+          let error = userJSON.message
+          // dispatch(errorLogin(error.toString()))
         }
       })
   }
+}
+
+export const loginUserFromToken = token => dispatch => {
+ fetch('http://localhost:3005/api/v1/reauth', {
+   method: 'GET',
+   headers: {
+     'Content-Type': 'application/json',
+     'Accept': 'application/json',
+     'Authorization': `BEARER ${token}`
+   }
+ }).then(r => r.json())
+   .then(user => dispatch(successLogin(user)))
 }
