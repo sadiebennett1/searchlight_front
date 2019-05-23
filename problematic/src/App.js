@@ -9,7 +9,8 @@ import CelebrityProfile from './components/CelebrityProfile'
 import UserProfile from './components/UserProfile'
 import About from './components/About'
 import TweetForm from './components/TweetForm'
-import { successLogin, loginUserFromToken } from './Redux/Actions/authActions.js'
+import { successLogin, loginUserFromToken} from './Redux/Actions/authActions.js'
+import {getTweets, getCelebrities} from './Redux/Actions/actions.js'
 import { connect } from 'react-redux'
 
 
@@ -20,12 +21,18 @@ class App extends Component {
 
 
   componentDidMount() {
+    this.props.getTweets()
+    this.props.getCelebrities()
     let token = localStorage.getItem('token')
+    // console.log(token)
     if(token){
         this.props.loginUserFromToken(localStorage.getItem('token'))
     }
   }
+
+
   render(){
+    // console.log(this.props)
     return (
       <div className="App">
         <header className="App-header">
@@ -44,7 +51,12 @@ class App extends Component {
     )
   }
 }
-
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getTweets: () => dispatch(getTweets()),
+    getCelebrities: () => dispatch(getCelebrities())
+  }
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -53,4 +65,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { successLogin, loginUserFromToken } )(App)
+export default connect(mapStateToProps, { successLogin, loginUserFromToken, getTweets, getCelebrities } )(App)

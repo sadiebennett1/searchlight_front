@@ -19,16 +19,25 @@ class CelebrityProfile extends Component {
         }))
 
     }
-    //
-    // componentDidMount(){
-    //   setTimeout(this.makeState, 3000)
-    // }
+
+
+    getBarLength = () => {
+      let numTweet = this.state.celebTweets.length
+      let percent = numTweet * 10
+      console.log(document)
+      return percent + "%"
+
+    }
 
     render(){
-      console.log(this.state.celebTweets)
+      let percent = this.getBarLength()
       return(
         <div>
         <img className="celebImage" src={this.state.celebrity.img} alt=""/> <h1>{this.state.celebrity.name}</h1>
+        <div><div class="w3-light-grey" id="progressBar">
+        <div class="w3-container w3-green w3-center" style={{width: percent}}>{this.getBarLength()}</div>
+        </div> Cancelled </div>
+        <br/>
         {this.state.celebTweets.map(tweet =>
           <div class="container">
             <div class="quote-box">

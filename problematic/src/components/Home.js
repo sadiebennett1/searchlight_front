@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { getTweets, getCelebrities } from '../Redux/Actions/actions.js'
+
 import SearchForm from './SearchForm'
 import {Link} from 'react-router-dom'
 import Login from './Login'
@@ -9,11 +9,6 @@ import CelebrityList from './CelebrityList'
 
 
 class Home extends Component {
-
-  componentDidMount(){
-    this.props.getTweets()
-    this.props.getCelebrities()
-  }
 
 
 
@@ -38,11 +33,5 @@ const mapStateToProps = (state) => {
 }
 
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getTweets: () => dispatch(getTweets()),
-    getCelebrities: () => dispatch(getCelebrities())
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
