@@ -9,6 +9,7 @@ import CelebrityProfile from './components/CelebrityProfile'
 import UserProfile from './components/UserProfile'
 import About from './components/About'
 import TweetForm from './components/TweetForm'
+import SignUp from './components/SignUp'
 import { successLogin, loginUserFromToken} from './Redux/Actions/authActions.js'
 import {getTweets, getCelebrities} from './Redux/Actions/actions.js'
 import { connect } from 'react-redux'
@@ -25,9 +26,9 @@ class App extends Component {
     this.props.getCelebrities()
     let token = localStorage.getItem('token')
     // console.log(token)
-    if(token){
-        this.props.loginUserFromToken(localStorage.getItem('token'))
-    }
+    // if(token){
+    //     this.props.loginUserFromToken(localStorage.getItem('token'))
+    // }
   }
 
 
@@ -42,6 +43,7 @@ class App extends Component {
                 <Route path="/newTweet" component={TweetForm}/>
                 <Route path="/about" component={About} />
                 <Route path="/login" component={Login} />
+                <Route path="/register" component={SignUp} />
                 <Route path="/api/v1/users/profile" component={UserProfile} />
                 <Route path="/celebrities/:id" component={CelebrityProfile}/>
                 <Route path="/404" component={Error} />

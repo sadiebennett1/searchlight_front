@@ -39,3 +39,27 @@ export const loginUserFromToken = token => dispatch => {
  }).then(r => r.json())
    .then(user => dispatch(successLogin(user)))
 }
+
+
+export const signUp = user => {
+    return (dispatch) => {
+        return fetch("http://localhost:3005/api/v1/users", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({user})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                console.log("try again")
+            } else {
+                console.log("this is the user obj", data)
+                localStorage.setItem('token', data.jwt)
+                dispatch(successLogin(data.user))
+            }
+        })
+    }
+}

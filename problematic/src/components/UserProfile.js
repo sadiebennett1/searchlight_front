@@ -8,6 +8,7 @@ const UserProfile = (props) => {
       <h1>User Profile</h1>
       Username: {props.currentUser.username}<br/><br/>
       <Link to={"/newTweet"}>Submit a Tweet</Link>
+      
     </div>
   )
 }

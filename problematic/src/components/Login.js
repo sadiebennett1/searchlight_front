@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 import { onLogin} from '../Redux/Actions/authActions.js'
 
 class Login extends React.Component {
@@ -88,6 +89,7 @@ class Login extends React.Component {
           <br></br>
           <input type="submit" value="Submit"></input>
           </form>
+          Don't have an account? Sign up <Link to={"/register"}>here!</Link>
       </div>
     )
   }
