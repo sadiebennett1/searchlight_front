@@ -39,12 +39,13 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: transparent;
 }
 
 .navlink {
   float: left;
-  border-right: 1px solid #bbb;
+  font-family: 'Raleway', sans-serif;
+  /* border-right: 1px solid #bbb; */
 }
 
 .navlink:last-child {
@@ -59,6 +60,12 @@
   padding: 14px 16px;
   text-decoration: none;
 
+}
+
+.logo {
+  height: 100px;
+  width: 150px;
+  align: left;
 }
 
 .userIcon {
