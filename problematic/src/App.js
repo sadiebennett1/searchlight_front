@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
-import logo from './logo.svg';
+import symbol from './assets/uhhhh.png';
 import './App.css';
 import Nav from './components/Nav'
 import Login from './components/Login'
@@ -36,7 +36,7 @@ class App extends Component {
     // console.log(this.props)
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="header"><h1>SEARCHLIGHT</h1></div>
           <BrowserRouter>
                 <Route path="/" component={Nav} />
                 <Route path="/home" component={Home} />
@@ -48,7 +48,6 @@ class App extends Component {
                 <Route path="/celebrities/:id" component={CelebrityProfile}/>
                 <Route path="/404" component={Error} />
           </BrowserRouter>
-        </header>
       </div>
     )
   }
