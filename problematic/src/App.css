@@ -33,25 +33,31 @@
 
 /* Style the top navigation bar */
 .topnav {
+  background-image: url(assets/navimg.jpeg);
   overflow: hidden;
-  background-color: #333;
+  background-color: white;
   list-style-type: none;
+  text-decoration: none;
 }
 
 /* Style the topnav links */
 .topnav li {
   float: left;
   display: block;
-  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 900;
+  text-shadow: 0px 1px, 1px 0px, 1px 0px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
 }
 
 /* Change color on hover */
 .topnav li:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .App-link {
@@ -80,7 +86,7 @@
 /* .navlink {
   float: left;
   font-family: 'Raleway', sans-serif;
-  /* border-right: 1px solid #bbb; 
+  /* border-right: 1px solid #bbb;
 } */
 
 /* .navlink:last-child {
@@ -96,7 +102,9 @@
   text-decoration: none;
 
 } */
-
+li {
+  text-decoration: none !important;
+}
 .logo {
   padding: 14px 16px;
   height: 70px;
@@ -131,6 +139,12 @@
 
 .container {
   width: 400px;
+}
+
+input {
+  border: 1px solid;
+  padding: 9px;
+  margin: 0 0 10px 0;
 }
 
 .quote {
