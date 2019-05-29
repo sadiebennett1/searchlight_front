@@ -1,5 +1,7 @@
 export const successLogin = (user) => ({type: 'ON_LOGIN', payload: user})
 export const errorLogin = (error) => ({type:'ERROR', payload: error})
+export const logOut = () => ({type:'LOGOUT', payload: null})
+
 
 
 export const onLogin = (state) => {

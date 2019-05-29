@@ -25,6 +25,8 @@ const reducer = (state = initialState, action) => {
       return {...state, filteredCelebs: action.payload}
     case 'ERROR':
       return {};
+    case 'LOGOUT':
+      return {...state, loggedIn: false, currentUser: {}, userId: {}}
     default:
       return state
   }

@@ -31,6 +31,34 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.leftcolumn {
+  float: left;
+  width: 20%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 80%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /* Style the top navigation bar */
 .topnav {
   background-image: url(assets/navimg.jpeg);
@@ -41,22 +69,23 @@
 }
 
 /* Style the topnav links */
-.topnav li {
+.topnav a {
   float: left;
   display: block;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 900;
   text-shadow: 0px 1px, 1px 0px, 1px 0px;
   font-family: 'Raleway', sans-serif;
   color: white;
   text-align: center;
   padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.55)
 }
 
 /* Change color on hover */
-.topnav li:hover {
-  background-color: black;
+.topnav a:hover {
+  background-color: transparent;
   color: white;
 }
 
@@ -105,6 +134,7 @@
 li {
   text-decoration: none !important;
 }
+
 .logo {
   padding: 14px 16px;
   height: 70px;
@@ -115,7 +145,7 @@ li {
 .userIcon {
   height: 40px;
   width: 40px;
-  align: left;
+  float: right;
 }
 /* li a:hover:not(.active) {
   background-color: #111;

@@ -1,16 +1,24 @@
 import React, { Component} from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
+import { logOut } from '../Redux/Actions/authActions.js'
 
-const UserProfile = (props) => {
+
+class UserProfile extends Component {
+
+  handLogout = () => {
+    localStorage.removeItem('token')
+    this.props.logOut()
+  }
+  render(){
   return (
     <div>
       <h1>User Profile</h1>
-      Username: {props.currentUser.username}<br/><br/>
-      <Link to={"/newTweet"}>Submit a Tweet</Link>
-      
+      Username: {this.props.currentUser.username}<br/><br/>
+      <Link to={"/newTweet"}>Submit a Tweet</Link><br/><br/>
+      <Link to={"/home"}><button type="button" onClick={this.handLogout}>Log Out</button></Link>
     </div>
-  )
+  )}
 }
 
 const mapStateToProps = (state) => {
@@ -18,4 +26,11 @@ const mapStateToProps = (state) => {
     currentUser: state.currentUser
   }
 }
-export default connect(mapStateToProps)(UserProfile);
+
+const mapDispatchToProps = (dispatch) =>{
+  return{
+    logOut: () => dispatch(logOut())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

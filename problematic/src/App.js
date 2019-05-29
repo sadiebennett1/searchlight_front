@@ -25,10 +25,10 @@ class App extends Component {
     this.props.getTweets()
     this.props.getCelebrities()
     let token = localStorage.getItem('token')
-    // console.log(token)
-    // if(token){
-    //     this.props.loginUserFromToken(localStorage.getItem('token'))
-    // }
+    console.log(token)
+    if(token){
+        this.props.loginUserFromToken(localStorage.getItem('token'))
+    }
   }
 
 

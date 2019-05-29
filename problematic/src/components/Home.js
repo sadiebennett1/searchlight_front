@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import Login from './Login'
 import { connect } from 'react-redux'
 import CelebrityList from './CelebrityList'
+import RecentTweets from './RecentTweets'
 
 
 class Home extends Component {
@@ -60,10 +61,13 @@ class Home extends Component {
 
   render(){
     return(
-      <div>
+      <div class="row">
         <p>dhdu</p>
+        <RecentTweets />
+        <div class="rightcolumn">
         <SearchForm />
         <CelebrityList celebrities={this.props.celebrities}/>
+        </div>
       </div>
     )
   }
