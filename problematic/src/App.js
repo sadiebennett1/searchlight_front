@@ -11,6 +11,7 @@ import About from './components/About'
 import TweetForm from './components/TweetForm'
 import SignUp from './components/SignUp'
 import { successLogin, loginUserFromToken} from './Redux/Actions/authActions.js'
+import TwitterFilter from './components/TwitterFilter'
 import {getTweets, getCelebrities} from './Redux/Actions/actions.js'
 import { connect } from 'react-redux'
 
@@ -25,7 +26,6 @@ class App extends Component {
     this.props.getTweets()
     this.props.getCelebrities()
     let token = localStorage.getItem('token')
-    console.log(token)
     if(token){
         this.props.loginUserFromToken(localStorage.getItem('token'))
     }
@@ -45,9 +45,13 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={SignUp} />
                 <Route path="/api/v1/users/profile" component={UserProfile} />
+                <Route path="/filter" component={TwitterFilter}/>
                 <Route path="/celebrities/:id" component={CelebrityProfile}/>
                 <Route path="/404" component={Error} />
           </BrowserRouter>
+        <div class="footer">
+        <h3>&copy; 2019 Sadie Bennett. All Rights Reserved.</h3>
+        </div>
       </div>
     )
   }

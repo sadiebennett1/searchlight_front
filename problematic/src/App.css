@@ -36,6 +36,7 @@
   width: 20%;
 }
 
+
 /* Right column */
 .rightcolumn {
   float: left;
@@ -49,8 +50,9 @@
 /* Add a card effect for articles */
 .card {
   background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 14px;
+  margin-top: 2px;
+  text-align: center;
 }
 
 /* Clear floats after the columns */
@@ -80,7 +82,7 @@
   color: white;
   text-align: center;
   padding: 14px 16px;
-  background: rgba(0, 0, 0, 0.55)
+  background: rgba(0, 0, 0, 0.34)
 }
 
 /* Change color on hover */
@@ -141,7 +143,19 @@ li {
   width: 70px;
   align: left;
 }
+.firstaboutpic {
+  height: 110px;
+  width: 120px;
+}
+.secondaboutpic {
+  height: 80px;
+  width: 80px;
+}
 
+.thirdaboutpic {
+  height: 70px;
+  width: 105px;
+}
 .userIcon {
   height: 40px;
   width: 40px;
@@ -215,21 +229,24 @@ blockquote::after {
   position: relative;
 }
 
-
+* {
+  box-sizing: border-box;
+}
 
 
 
 .sign {
   background-color: transparent;
-  width: 250px;
-  height: 165px;
+  width: 200px;
+  height: 100px;
   margin: 40px auto;
   text-align: center;
   /* bring your own prefixes */
+  align-content: left;
   border-radius: 10px;
-  border: 15px double red;
+  border: 15px double #A92B96;
   position: relative;
-  box-shadow: -1px 0px 106px 1px rgb(237,12,12);
+  box-shadow: -1px 0px 106px 1px rgb(169,43,150);
 }
 
 h2 {
@@ -239,13 +256,56 @@ h2 {
   -webkit-text-stroke-width: 6px;
   -webkit-text-stroke-color: gold;
   font-family: 'Futura', sans-serif;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em gold, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em gold, 0 0 0.5em #93FF38, 0 0 0.1em #93FF38;
    animation: blink linear infinite 5s;
+}
+/* Footer */
+.footer {
+  padding: 1px;
+  color: white;
+  text-align: center;
+  background: black;
+  margin-top: 250px;
+}
+h3{
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.aboutheaders {
+  font-size: 23px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
 }
 
 p {
-  font-family: 'Futura', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
+
+
+/* .thirdcard {
+  align-content: center;
+  background-color: black;
+  padding: 17px;
+  font-size: 17px;
+  margin-top: 2px;
+} */
+
+/* Clear floats after the columns */
+.aboutrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+
 @keyframes blink {
 0% { opacity: 0; }
 
