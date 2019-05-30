@@ -49,8 +49,12 @@ class App extends Component {
                 <Route path="/celebrities/:id" component={CelebrityProfile}/>
                 <Route path="/404" component={Error} />
           </BrowserRouter>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
         <div class="footer">
+        <a href="https://www.linkedin.com/in/sadie-bennett-957ba214b/">LinkedIn</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://twitter.com/dev_sadie">Twitter</a>
         <h3>&copy; 2019 Sadie Bennett. All Rights Reserved.</h3>
+
         </div>
       </div>
     )

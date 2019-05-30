@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 class TwitterFilter extends Component {
-  
+
   // componentDidMount(){
   //   fetch((`${this.state.proxyURL}` + `${this.state.twitterURL}`), {
   //     method: 'POST',
@@ -44,7 +44,11 @@ class TwitterFilter extends Component {
 
   render(){
     return(
-      null
+      <div>
+      <h1>Live Twitter Search</h1>
+      <input onChange={this.handleChange} style={{ width: 500, height: 45, borderRadius: '100px'}} type="text"
+        placeholder="Enter a keyword" />
+      </div>
     )
   }
 }

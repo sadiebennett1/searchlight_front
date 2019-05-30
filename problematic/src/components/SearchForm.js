@@ -18,7 +18,7 @@ class SearchForm extends Component {
 
   render(){
     return(
-      <input onChange={this.handleChange} style={{ width: 500, height: 35, borderRadius: '100px'}} type="text"
+      <input onChange={this.handleChange} style={{ width: 500, height: 45, borderRadius: '100px'}} type="text"
         placeholder={"Search for a Celebrity"} />
     )
   }

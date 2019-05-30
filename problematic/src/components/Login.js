@@ -20,6 +20,7 @@ class Login extends React.Component {
     event.preventDefault()
     this.props.onLogin(this.state)
     this.resetState()
+    this.props.history.push('/api/v1/users/profile')
   }
 
   resetState = () => {

@@ -7,7 +7,8 @@ const initialState = {
   currentUser: {},
   userId: {},
   loggedIn: false,
-  tweets: []
+  tweets: [],
+  bearerToken: 0
 }
 
 

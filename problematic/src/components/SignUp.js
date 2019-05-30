@@ -22,7 +22,7 @@ class SignUp extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.signUp(this.state)
-    this.props.history.push('/api/v1/profile')
+    this.props.history.push('/api/v1/users/profile')
   }
 
 

@@ -23,9 +23,9 @@ class Home extends Component {
   render(){
     return(
       <div className="row">
-        <p>dhdu</p>
         <RecentTweets length={this.props.tweets.length}/>
         <div className="rightcolumn">
+        <br/>
         <SearchForm />
         <CelebrityList celebrities={this.props.celebrities}/>
         </div>

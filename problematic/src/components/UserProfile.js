@@ -13,10 +13,10 @@ class UserProfile extends Component {
   render(){
   return (
     <div>
-      <h1>User Profile</h1>
-      Username: {this.props.currentUser.username}<br/><br/>
-      <Link to={"/newTweet"}>Submit a Tweet</Link><br/><br/>
-      <Link to={"/home"}><button type="button" onClick={this.handLogout}>Log Out</button></Link>
+      <h1><u>Profile</u></h1>
+      <h3>Username: {this.props.currentUser.username}</h3><br/><br/>
+      <Link to={"/newTweet"}><h4>Submit a Tweet</h4></Link><br/><br/>
+      <Link to={"/home"}><button type="button" onClick={this.handLogout}><h4>Log Out</h4></button></Link>
     </div>
   )}
 }

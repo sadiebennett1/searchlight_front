@@ -18,7 +18,7 @@ export const onLogin = (state) => {
       })
       .then(r => r.json())
       .then(userJSON => {
-         console.log('Login response: ', userJSON.exception)
+         // console.log('Login response: ', userJSON.exception)
         if (userJSON.jwt && userJSON.user){
           localStorage.setItem('token', userJSON.jwt)
           dispatch(successLogin(userJSON))
@@ -44,6 +44,7 @@ export const loginUserFromToken = token => dispatch => {
 
 
 export const signUp = user => {
+    console.log(user)
     return (dispatch) => {
         return fetch("http://localhost:3005/api/v1/users", {
             method: "POST",
@@ -53,14 +54,17 @@ export const signUp = user => {
             },
             body: JSON.stringify({user})
         })
-        .then(response => response.json())
+        .then((response) => {
+          console.log(response);
+          return response.json()
+        })
         .then(data => {
-            if (data.message) {
+            if (data.error) {
                 console.log("try again")
             } else {
                 console.log("this is the user obj", data)
                 localStorage.setItem('token', data.jwt)
-                dispatch(successLogin(data.user))
+                dispatch(onLogin({username: user.username, password: user.password}))
             }
         })
     }
