@@ -7,6 +7,9 @@ const About = () => {
     return(
       <div>
       <h2 className="sign">About</h2>
+
+      <p>As news continues to move faster, so has the speed of our forgotten history. For better and worse, social media and internet have allowed us to maintain a trackrecord of the offensive, oppressive, and unacceptable things celebrities have said in public arenas. The aim of SEARCHLIGHT is not to vilify but rather to increase accountability for those with the most power in our society.</p>
+
       <div className="aboutrow">
           <div className="column">
             <img src={accountable} alt="" className="firstaboutpic"/>
@@ -34,6 +37,7 @@ const About = () => {
             <p>This website was created for my final project as a part of The Flatiron School. My aim for this website was not only to maintain internet accountability but also to practice different technologies for web development. This website is made with a Ruby on Rails backend, and Javascript, React, and Redux frontend.</p>
           </div>
        </div>
+
       </div>
     )
 }

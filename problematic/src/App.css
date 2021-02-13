@@ -7,6 +7,19 @@
   height: 40vmin;
   pointer-events: none;
 }
+/*
+.eheader {
+  background-color: #282c34;
+  min-height: 10vh;
+  max-height: 500vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+
+} */
+
 
 
 
@@ -277,6 +290,40 @@ h1{
   color: white;
 }
 
+.header {
+  padding: 1px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  list-style-type: none;
+}
+
+/* Style the topnav links */
+.topnav li {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav li:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -300,16 +347,19 @@ h1{
   background-color: transparent;
 }
 
-/* .navlink {
+.navlink {
   float: left;
+  border-right: 1px solid #bbb;
   font-family: 'Raleway', sans-serif;
-  /* border-right: 1px solid #bbb;
-} */
+}
+
+
 
 /* .navlink:last-child {
   border-right: none;
   float: right;
 } */
+
 /*
 .navlink a {
   display: block;
@@ -319,17 +369,22 @@ h1{
   text-decoration: none;
 
 } */
+
 li {
   text-decoration: none !important;
   list-style-type: none;
   font-size: 24px;
 }
 
+
 .logo {
   padding: 14px 16px;
   height: 70px;
   width: 70px;
   align: left;
+
+}
+
 }
 .firstaboutpic {
   height: 110px;
@@ -344,6 +399,7 @@ li {
   height: 70px;
   width: 120px;
 }
+
 .userIcon {
   height: 40px;
   width: 40px;
@@ -483,9 +539,10 @@ blockquote::after {
 
 
 .sign {
-  background-color: transparent;
-  width: 200px;
-  height: 100px;
+  background-color: 
+  width: 250px;
+  height: 165px;
+
   margin: 40px auto;
   text-align: center;
   /* bring your own prefixes */
