@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import header from '../assets/header.png'
 
 class CelebrityProfile extends Component {
 
@@ -49,9 +50,27 @@ class CelebrityProfile extends Component {
            </div>
           </div>
         </div>
+         <div className="profile" style={{ 'background-image': `url('${this.state.celebrity.img}')`}} ></div>
+            <div className="info">
+              <h3>{this.state.celebrity.name}</h3>
+              <p>{this.state.celebrity.occupation}</p>
+              </div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-          )}
+          <div class="w3-light-grey w3-xlarge">
+            <div class="w3-container w3-red" style={{width: percent}}>{this.getBarLength()} Cancelled</div>
+          </div>
+          <br/><br/>
+        <div class="tweetgallery">
+        {this.state.celebTweets.map(tweet =>
+            <div class="responsive">
+              <div class="gallery">
+                  <div class="tweetcontent">{tweet.content}</div>
+                </div>
+              </div>
+            )}
         </div>
+    </div>
 
       )
     }

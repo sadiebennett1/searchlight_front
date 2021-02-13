@@ -17,8 +17,278 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+
 } */
+
+
+
+
+
+a{
+  text-decoration: none;
+}
+.cont{
+  position: relative;
+  width:300px;
+  height:120px;
+  background:white;
+  margin-top:20px;
+  margin-bottom:60px;
+  display: inline-block;
+}
+
+.profile{
+  position:absolute;
+  top:20px;
+  left:45px;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  border:5px solid rgb(200,200,200);
+  transition:.3s;
+
+  background-repeat: no-repeat;
+  background-position: -35px 0px;
+  background-size: 280px 200px;
+}
+
+.info{
+  position:absolute;
+  top:210px;
+  left:20px;
+  width:260px;
+  height:200px;
+  text-align:center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.info h3{
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.w3-xlarge{
+  margin-left: 400px;
+}
+
+.w3-light-grey {
+  width: 400px;
+  display: inline-block”
+}
+
+a:hover, a:active {
+  color: #00BFFF;
+}
+
+.info p{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.pin{
+  position:absolute;
+  left:70px;
+  top:15px;
+  width:25px;
+  opacity:.5;
+}
+.ins{
+  position:absolute;
+  left:140px;
+  top:15px;
+  width:25px;
+  opacity:.5;
+}
+.twi{
+  position:absolute;
+  left:210px;
+  top:15px;
+  width:25px;
+  opacity:.5;
+}
+.pin:hover{
+  position:absolute;
+  left:70px;
+  top:15px;
+  width:25px;
+  opacity:1;
+}
+.ins:hover{
+  position:absolute;
+  left:140px;
+  top:15px;
+  width:25px;
+  opacity:1;
+}
+.twi:hover{
+  position:absolute;
+  left:210px;
+  top:15px;
+  width:25px;
+  opacity:1;
+}
+
+
+
+
+
+
+
+
+
+
+.header {
+  padding: 1px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.leftcolumn {
+  float: left;
+  width: 20%;
+  background-color: #52ACFF;
+}
+.blockquote-wrapper {
+   display: flex;
+   height: 40vh;
+   padding: 0 10px;
+}
+
+/* Blockquote main style */
+.blockquote {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    padding: 20px 0;
+    width: 100%;
+    max-width: 500px;
+    z-index: 1;
+    margin: 80px auto;
+    align-self: center;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+}
+
+.recentheader {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Blockquote header */
+.blockquote h1 {
+    position: relative;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Blockquote right double quotes */
+.blockquote:after {
+    position: absolute;
+    content: "”";
+    color: rgba(255, 255, 255, 1);
+    font-size: 50px;
+    line-height: -1;
+    bottom: -43px;
+    right: 30px;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 100px) {
+    .blockquote h1 {
+        font-size: 20px;
+   }
+
+}
+
+h1{
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+    position: relative;
+    color: #292a2b;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+
+
+/* Right column */
+.rightcolumn {
+  float: right;
+  width: 80%;
+  height: 100%;
+  /* background-color: white; */
+  padding-left: 20px;
+
+}
+
+
+
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 14px;
+  margin-top: 2px;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row{
+  text-align: center;
+  margin-right: 80px;
+}
+/* Style the top navigation bar */
+.topnav {
+  background-image: url(assets/navimg.jpeg);
+  overflow: hidden;
+  background-color: white;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 900;
+  text-shadow: 0px 1px, 1px 0px, 1px 0px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.34);
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: transparent;
+  color: white;
+}
 
 .header {
   padding: 1px;
@@ -74,24 +344,22 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: transparent;
 }
 
-/* .navlink {
+.navlink {
   float: left;
-<<<<<<< HEAD
   border-right: 1px solid #bbb;
-}
-=======
   font-family: 'Raleway', sans-serif;
-  /* border-right: 1px solid #bbb; 
-} */
->>>>>>> 517ffb4... some styling
+}
+
+
 
 /* .navlink:last-child {
   border-right: none;
   float: right;
 } */
+
 /*
 .navlink a {
   display: block;
@@ -102,20 +370,40 @@
 
 } */
 
-<<<<<<< HEAD
-=======
+li {
+  text-decoration: none !important;
+  list-style-type: none;
+  font-size: 24px;
+}
+
+
 .logo {
   padding: 14px 16px;
   height: 70px;
   width: 70px;
   align: left;
+
 }
 
->>>>>>> 517ffb4... some styling
+}
+.firstaboutpic {
+  height: 110px;
+  width: 120px;
+}
+.secondaboutpic {
+  height: 80px;
+  width: 80px;
+}
+
+.thirdaboutpic {
+  height: 70px;
+  width: 120px;
+}
+
 .userIcon {
   height: 40px;
   width: 40px;
-  align: left;
+  float: right;
 }
 /* li a:hover:not(.active) {
   background-color: #111;
@@ -136,14 +424,79 @@
   top: 3100px;
 }
 
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 20px;
+  float: left;
+  width: 30.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.tweetcontent{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+.tweetgallery{
+  background:white;
+  margin-top:0px;
+  margin-bottom:30px;
+  display: inline-block;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 
 .container {
   width: 400px;
 }
 
+input {
+  border: 1px solid;
+  padding: 9px;
+  margin: 0 0 10px 0;
+}
+
 .quote {
   background-color: white;
-  border-top-left-radius: 8px;
+  border-top-left-radius: 1px;
   border-top-right-radius: 8px;
   color: black;
   margin: 0;
@@ -171,29 +524,33 @@ blockquote::after {
   border-color: transparent white transparent transparent;
   border-image: none;
   border-style: solid;
-  border-width: 20px;
+  border-width: 1px;
   top: 40px;
-  content: " ";
+  content: "”";
   display: block;
   right: 75%;
   position: relative;
 }
 
-
+* {
+  box-sizing: border-box;
+}
 
 
 
 .sign {
-  background-color: transparent;
+  background-color: 
   width: 250px;
   height: 165px;
+
   margin: 40px auto;
   text-align: center;
   /* bring your own prefixes */
+  align-content: left;
   border-radius: 10px;
-  border: 15px double red;
+  border: 15px double #A92B96;
   position: relative;
-  box-shadow: -1px 0px 106px 1px rgb(237,12,12);
+  box-shadow: -1px 0px 106px 1px rgb(169,43,150);
 }
 
 h2 {
@@ -203,13 +560,57 @@ h2 {
   -webkit-text-stroke-width: 6px;
   -webkit-text-stroke-color: gold;
   font-family: 'Futura', sans-serif;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em gold, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em gold, 0 0 0.5em gold, 0 0 0.1em gold;
    animation: blink linear infinite 5s;
+}
+/* Footer */
+.footer {
+  padding: 1px;
+  color: white;
+  text-align: center;
+  background: black;
+  margin-top: 250px;
+}
+h3{
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.aboutheaders {
+  font-size: 23px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
 }
 
 p {
-  font-family: 'Futura', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
 }
+
+
+/* .thirdcard {
+  align-content: center;
+  background-color: black;
+  padding: 17px;
+  font-size: 17px;
+  margin-top: 2px;
+} */
+
+/* Clear floats after the columns */
+.aboutrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+
 @keyframes blink {
 0% { opacity: 0; }
 

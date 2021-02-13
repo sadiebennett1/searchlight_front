@@ -7,7 +7,8 @@ const initialState = {
   currentUser: {},
   userId: {},
   loggedIn: false,
-  tweets: []
+  tweets: [],
+  bearerToken: 0
 }
 
 
@@ -25,6 +26,8 @@ const reducer = (state = initialState, action) => {
       return {...state, filteredCelebs: action.payload}
     case 'ERROR':
       return {};
+    case 'LOGOUT':
+      return {...state, loggedIn: false, currentUser: {}, userId: {}}
     default:
       return state
   }
