@@ -5,20 +5,30 @@ import {Link} from 'react-router-dom'
 import Login from './Login'
 import { connect } from 'react-redux'
 import CelebrityList from './CelebrityList'
-
+import RecentTweets from './RecentTweets'
 
 
 class Home extends Component {
 
 
+  state = {
+    bearerToken: 0,
+    twitterURL: "https://api.twitter.com/oauth2/token",
+    proxyURL: "https://cors-anywhere.herokuapp.com/",
+    searchURL: "https://api.twitter.com/1.1/tweets/search/fullarchive/Development.json"
+  }
+
+
 
   render(){
-
     return(
-      <div>
-        <h1>Home Page</h1>
+      <div className="row">
+        <RecentTweets length={this.props.tweets.length}/>
+        <div className="rightcolumn">
+        <br/>
         <SearchForm />
         <CelebrityList celebrities={this.props.celebrities}/>
+        </div>
       </div>
     )
   }

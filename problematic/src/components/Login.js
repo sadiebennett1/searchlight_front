@@ -20,6 +20,7 @@ class Login extends React.Component {
     event.preventDefault()
     this.props.onLogin(this.state)
     this.resetState()
+    this.props.history.push('/api/v1/users/profile')
   }
 
   resetState = () => {
@@ -81,14 +82,14 @@ class Login extends React.Component {
     return(
       <div>
           <form onSubmit={(event) => {this.handleLogin(event)}}>
-          Username:<br/>
-          <input onChange={this.handleChange} type="textfield" name="username" value={this.state.username}></input>
           <br/>
-          Password:<br/>
-          <input onChange={this.handleChange} type="textfield" name="password" value={this.state.password}></input>
-          <br></br>
+          <input placeholder='Enter your username' onChange={this.handleChange} type="textfield" name="username" value={this.state.username}></input>
+          <br/>
+        <br/>
+          <input placeholder='Enter your password' onChange={this.handleChange} type="textfield" name="password" value={this.state.password}></input>
+          <br/><br/>
           <input type="submit" value="Submit"></input>
-          </form>
+          </form><br/>
           Don't have an account? Sign up <Link to={"/register"}>here!</Link>
       </div>
     )
